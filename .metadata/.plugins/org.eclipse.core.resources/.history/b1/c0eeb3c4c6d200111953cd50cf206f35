@@ -1,0 +1,51 @@
+package ejercicio3;
+
+import java.awt.EventQueue;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JButton;
+import javax.swing.SwingConstants;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class VentanaPrincipal {
+
+	private JFrame frame;
+
+	public static void main(String[] args) {
+		EventQueue.invokeLater(() -> {
+			try {
+				VentanaPrincipal window = new VentanaPrincipal();
+				window.frame.setVisible(true);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		});
+	}
+
+	public VentanaPrincipal() {
+		initialize();
+	}
+
+	private void initialize() {
+		frame = new JFrame("Ventana principal");
+		frame.setBounds(100, 100, 400, 250);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+
+		JLabel lblBienvenida = new JLabel("Bienvenido a la App");
+		lblBienvenida.setHorizontalAlignment(SwingConstants.CENTER);
+		lblBienvenida.setBounds(80, 45, 220, 30);
+		frame.getContentPane().add(lblBienvenida);
+
+		JButton btnAbrir = new JButton("Abrir segunda ventana");
+		btnAbrir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				VentanaSecundaria ventana = new VentanaSecundaria();
+				ventana.setVisible(true);
+			}
+		});
+		btnAbrir.setBounds(90, 110, 210, 30);
+		frame.getContentPane().add(btnAbrir);
+	}
+}

@@ -1,0 +1,20 @@
+package interfaz;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+
+public class VentanaSecundaria extends JFrame {
+
+	public VentanaSecundaria() {
+		setTitle("Ventana secundaria");
+		setBounds(550, 100, 400, 250);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		getContentPane().setLayout(null);
+
+		JLabel lblTexto = new JLabel("Esta es la segunda pantalla");
+		lblTexto.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTexto.setBounds(50, 70, 300, 30);
+		getContentPane().add(lblTexto);
+	}
+}

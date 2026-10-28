@@ -1,0 +1,15 @@
+package interfaz;
+
+import javax.swing.*;
+
+public class VentanaSecundaria extends JFrame {
+	public VentanaSecundaria() {
+		setTitle("Segunda Ventana");
+		setSize(300, 200);
+		setLocationRelativeTo(null);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+		JLabel etiqueta = new JLabel("Esta es la segunda pantalla", SwingConstants.CENTER);
+		add(etiqueta);
+	}
+}

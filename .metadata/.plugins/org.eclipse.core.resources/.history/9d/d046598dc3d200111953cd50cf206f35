@@ -1,0 +1,57 @@
+package interfaz;
+
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+// Segunda Ventana
+class VentanaSecundaria extends JFrame {
+    public VentanaSecundaria() {
+        setTitle("Segunda Ventana");
+        setSize(300, 200);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+        JLabel etiqueta = new JLabel("Esta es la segunda pantalla", SwingConstants.CENTER);
+        add(etiqueta);
+    }
+}
+
+// Ventana Principal
+public class VentanaPrincipal extends JFrame {
+    public VentanaPrincipal() {
+        setTitle("Ventana Principal");
+        setSize(350, 200);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        // Layout y componentes
+        setLayout(null);
+
+        JLabel saludo = new JLabel("Bienvenido a la App");
+        saludo.setBounds(110, 30, 150, 25);
+        add(saludo);
+
+        JButton boton = new JButton("Abrir Segunda Ventana");
+        boton.setBounds(75, 80, 180, 30);
+        add(boton);
+
+        // Evento del botón para abrir la otra ventana
+        boton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                VentanaSecundaria ventanaSec = new VentanaSecundaria();
+                ventanaSec.setVisible(true);
+            }
+        });
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new VentanaPrincipal().setVisible(true);
+            }
+        });
+    }
+}

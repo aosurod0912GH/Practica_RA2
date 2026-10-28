@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * 
+ */
+module Practica_RA2_Java {
+	requires java.desktop;
+}
